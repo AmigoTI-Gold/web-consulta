@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  gold-database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: hospital
+    ports:
+      - '5432:5432'
+    volumes:
+      - /home/nicasiomaques/docker/PostgreSQL:/var/lib/postgresql/data
+  gold-server-nodejs:
+    container_name: api
+    restart: always
+    build: .
+    ports:
+      - 3333:3333
+    depends_on:
+      - gold-database

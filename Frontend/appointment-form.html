@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css" />
+
+	<title>Clínica Sansua</title>
+</head>
+
+<body>
+	<div id="spinner-bg">
+		<div id="spinner"></div>
+	</div>
+
+	<div class="sidebar">
+		<a href="appointments.html">
+			<div class="icon-box">
+				<img src="assets/dashicons_calendar-alt.svg" alt="icon calender">
+			</div>
+		</a>
+		<a href="patient.html">
+			<div class="icon-box">
+				<img src="assets/icon-user.svg" alt="icon user">
+			</div>
+		</a>
+		<a href="Specialist.html">
+			<div class="icon-box">
+				<img src="assets/icon-doctor.svg" alt="icon doctor">
+			</div>
+		</a>
+		<a href="specialist-appointments.html">
+			<div class="icon-box">
+				<img src="assets/appointment.svg" alt="icon doctor">
+			</div>
+		</a>
+	</div>
+	<div class="header">
+		<h1>Clínica Sansua</h1>
+		<button class="btn btn--logout">Sair</button>
+	</div>
+	<div class="content">
+		<div class="patient content--decorated">
+			<div class="patient__details">
+				<span class="patient__name">Nicasio Silva</span>
+				<div class="patient__detail">
+					<span>Idade</span>
+					<span class="patient__age">21</span>
+				</div>
+
+				<div class="patient__detail">
+					<span>Processo</span>
+					<span class="patient__id">#8472</span>
+				</div>
+
+				<div class="patient__detail">
+					<span>Telefone</span>
+					<span class="patient__phone">+244 995 771 750</span>
+				</div>
+			</div>
+			<div class="btn-box">
+				<button class="btn btn--primary btn--large" id="end-appointment">Finalizar Consulta</button>
+			</div>
+		</div>
+
+		<div class="marking content--decorated">
+			<ul class="making__menu">
+				<a onclick="openClose(event, 'form-marking')" class="menu__item active tablinks">Triagem</a>
+				<a onclick="openClose(event, 'ClinicProcess')" class="menu__item tablinks">Processo Clínico</a>
+				<a onclick="openClose(event, 'Tests')" class="menu__item tablinks">Solicitação de Exames</a>
+			</ul>
+
+			<form action="#" id="form-marking" class="tabcontent show form">
+				<div class="form__inputs">
+					<div class="form__item">
+						<label for="height">Altura</label>
+						<input placeholder="0,0" type="number" class="form__input" id="height" />
+					</div>
+
+					<div class="form__item">
+						<label for="weight">Peso</label>
+						<input placeholder="0,0" type="number" class="form__input" id="weight" />
+					</div>
+
+					<div class="form__item">
+						<label for="imc">IMC</label>
+						<input placeholder="0,0" type="number" class="form__input" id="imc" />
+					</div>
+
+					<div class="form__item">
+						<label for="TA">TA(mmHg)</label>
+						<input placeholder="0,0" type="number" class="form__input" id="TA" />
+					</div>
+
+					<div class="form__item">
+						<label for="Temperature">T(ºC)</label>
+						<input placeholder="0,0" type="number" class="form__input" id="Temperature" />
+					</div>
+
+					<div class="form__item">
+						<label for="fc">FC(bpm)</label>
+						<input placeholder="0" type="number" class="form__input" id="fc" />
+					</div>
+
+					<div class="form__item">
+						<label for="fr">FR(RPM)</label>
+						<input placeholder="0" type="number" class="form__input" id="fr" />
+					</div>
+
+					<div class="form__item">
+						<label for="perimetro">PC</label>
+						<input placeholder="0,0" type="number" class="form__input" id="perimetro" />
+					</div>
+
+					<div class="form__item">
+						<label for="sp02">Sp02</label>
+						<input placeholder="0" type="number" class="form__input" id="sp02" />
+					</div>
+				</div>
+
+				<div class="form__textarea">
+					<div class="form__item">
+						<label for="duration">Duração</label>
+						<textarea class="form__input" placeholder="Duração das dores" id="duration"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Tipo</label>
+						<textarea class="form__input" placeholder="Tipo de dor" id="painType"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Motivo</label>
+						<textarea class="form__input" placeholder="Motivo da consulta" id="consultationReason"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Descrição</label>
+						<textarea class="form__input" placeholder="Descrição dos sintomas" id="descriptionSymptoms"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Sintomas</label>
+						<textarea class="form__input" placeholder="Sintomas acompanhados" id="followSymptoms"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Alívio</label>
+						<textarea class="form__input" placeholder="Factores de alívio" id="reliefFactors"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Localização</label>
+						<textarea class="form__input" placeholder="Localização da dor" id="painLocation"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Agravamento</label>
+						<textarea class="form__input" placeholder="Factores de Agravamento" id="aggrationFactors"></textarea>
+					</div>
+				</div>
+				<div class="btns-box">
+					<button id="sendTriage" class="btn">Salvar</button>
+					<button class="btn btn--secondary">Cancelar</button>
+				</div>
+			</form>
+
+			<div id="ClinicProcess" class="tabcontent">
+				<div class="form__textarea">
+					<div class="form__item">
+						<label for="duration">Diagnóstico</label>
+						<textarea class="form__input" placeholder="Diagnóstico da consulta" id="diagnosis"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Motivo</label>
+						<textarea class="form__input" placeholder="Motivo e Anamnese" id="reason"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Observções</label>
+						<textarea class="form__input" placeholder="Outras informações não referenciadas"
+							id="justification"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Exame</label>
+						<textarea class="form__input" placeholder="Objectivo Geral" id="generalObjective"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Plano</label>
+						<textarea placeholder="Plano médico" class="form__input" id="plan"></textarea>
+					</div>
+
+					<div class="form__item">
+						<label for="duration">Medicação</label>
+						<textarea placeholder="Prescrição Medica" class="form__input" id="medication"></textarea>
+					</div>
+				</div>
+
+				<div class="btns-box">
+					<button id="sendClinicalProcess" class="btn">Salvar</button>
+					<button class="btn btn--secondary">Cancelar</button>
+				</div>
+			</div>
+
+			<div id="Tests" class="tabcontent">
+				<div class="search__container">
+					<input type="search" placeholder="Nome do exame" class="search__input form__input" />
+				</div>
+				<div class="tests-container">
+					<div class="tests-avalible">
+						<h2>Lista de Exames</h2>
+						<ul class="test-items">
+						</ul>
+					</div>
+					<div class="tests-requested">
+						<h2>Exames Solicitados</h2>
+						<ul class="test-items">
+						</ul>
+					</div>
+				</div>
+				<div class="btns-box">
+					<button id="sendExams" class="btn">Salvar</button>
+					<button class="btn btn--secondary">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="sweetalert2.all.min.js"></script>
+<script src="./tabs.js"></script>
+<script src="moment.min.js"></script>
+<script src="./moment-locale-pt.js"></script>
+<script type="text/javascript" src="./html2canvas.js"></script>
+<script type="text/javascript" src="./jspdf.min.js"></script>
+
+<script type="module" src="./app.js"></script>
+
+</html>

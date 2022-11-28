@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Clínica Sansua</title>
+</head>
+
+<body>
+  <div id="spinner-bg">
+    <div id="spinner"></div>
+  </div>
+
+  <div class="sidebar">
+
+    <a href="appointments.html">
+      <div class="icon-box">
+        <img src="assets/dashicons_calendar-alt.svg" alt="icon calender">
+      </div>
+    </a>
+    <a href="patient.html">
+      <div class="icon-box">
+        <img src="assets/icon-user.svg" alt="icon user">
+      </div>
+    </a>
+    <a href="Specialist.html">
+      <div class="icon-box">
+        <img src="assets/icon-doctor.svg" alt="icon doctor">
+      </div>
+		</a>
+
+		<a href="specialist-appointments.html">
+			<div class="icon-box">
+				<img src="assets/appointment.svg" alt="icon doctor">
+			</div>
+		</a>
+  </div>
+  <div class="header">
+		<h1>Clínica Sansua - Saúde para si</h1>
+		<button class="btn btn--logout">Sair</button>
+
+  </div>
+  <div class="content">
+
+    <div class="marking content--decorated">
+      <ul class="making__menu">
+        <a onclick="openClose(event, 'NewSpecialist')" class="menu__item  tablinks">Novo Especialista</a>
+        <a onclick="openClose(event, 'ListSpecialists')" class="menu__item active tablinks">Lista de Especialistas</a>
+      </ul>
+
+      <div id="NewSpecialist" class="tabcontent  form">
+        <div class="two-columns">
+          <div class="form__item">
+            <label for="name">Nome</label>
+            <input placeholder="Nome do especialista" required type="text" class="form__input" id="name" />
+          </div>
+
+          <div class="form__item">
+            <label for="nationality">Nacionalidade</label>
+            <input placeholder="Nacionalidade do especialista" type="text" class="form__input" id="nationality" />
+          </div>
+
+          <div class="form__item">
+            <label for="maritalStatus">Estado Civil</label>
+            <select class="form__input" id="maritalStatus">
+              <option value="" selected disabled>Escolhe o estado civil</option>
+              <option value="Solteiro/a">Solteiro/a</option>
+              <option value="Divorciado/a">Divorciado/a</option>
+              <option value="Casado/a">Casado/a</option>
+            </select>
+          </div>
+
+          <div class="form__item">
+            <label for="BI">Número de Ordem</label>
+            <input placeholder="Número da ordem dos médicos" required type="text" class="form__input" id="orderNumber" />
+          </div>
+
+          <div class="form__item">
+            <label for="email">E-mail</label>
+            <input placeholder="E-mail do Especialista" type="text" max="60" class="form__input" id="email" />
+          </div>
+
+          <div class="form__item">
+            <label for="phone">Telefone</label>
+            <input placeholder="9xx xxx xxx" type="text" class="form__input" maxlength="9" id="phone" />
+          </div>
+
+
+          <div class="form__item">
+            <label for="email">Usuário</label>
+            <input placeholder="Nome de usuário" type="text" max="60" class="form__input" id="username" />
+          </div>
+
+          <div class="form__item">
+            <label for="phone">Senha</label>
+            <input placeholder="xxxxxxxxxxx" type="password" class="form__input" id="password" />
+          </div>
+
+          <div id="form__radio">
+            <label>Gênero</label>
+            <div class="form__item">
+              <label for="genderM">Masculino</label>
+              <input type="radio" value="M" name="gender" id="genderM" />
+
+							<label for="genderF">Feminino</label>
+              <input type="radio" value="F" name="gender" id="genderF" />
+            </div>
+          </div>
+
+          <div class="form__item">
+            <label for="BI">Especialidade</label>
+            <input placeholder="Especialidade clínica" type="text" class="form__input" id="clinicalSpecialty" />
+          </div>
+
+          <div class="form__item">
+            <label for="address">Morada</label>
+            <input placeholder="Escreve o endereço do especialista" type="text" class="form__input" id="address" />
+          </div>
+        </div>
+
+				<p style="font-size: 1.4rem;font-weight: 700; color:tomato">O número da ordem dos médicos é obrigatório não pode ser repetido</p>
+
+        <div class="btns-box">
+          <button id="sendSpecialist" class="btn btn--primary">Salvar</button>
+          <button class="btn btn--secondary" id="clear-fields">Limpar</button>
+        </div>
+      </div>
+
+      <div id="ListSpecialists" class="tabcontent show">
+				
+
+					<div class="search__container">
+						<input type="search" placeholder="Nome do especialista" id="searchSpecialist" class="search__input form__input" />
+					</div>
+
+					<div class="table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Nome</th>
+									<th>Especialidade</th>
+									<th>Acções</th>
+								</tr>
+							</thead>
+							<tbody class="specialists-list">
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+      </div>
+    </div>
+	</div>
+</body>
+<script src="./sweetalert2.all.min.js"></script>
+<script src="./tabs.js"></script>
+<script type="module" src="./specialist.js"></script>
+
+</html>

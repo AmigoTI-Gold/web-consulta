@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css" />
+
+	<title>Clínica Sansua</title>
+</head>
+
+<body>
+	<div id="spinner-bg">
+		<div id="spinner"></div>
+	</div>
+
+	<div class="sidebar">
+		<a href="appointments.html">
+			<div class="icon-box">
+				<img src="assets/dashicons_calendar-alt.svg" alt="icon calender">
+			</div>
+		</a>
+		<a href="patient.html">
+			<div class="icon-box">
+				<img src="assets/icon-user.svg" alt="icon user">
+			</div>
+		</a>
+		<a href="Specialist.html">
+			<div class="icon-box">
+				<img src="assets/icon-doctor.svg" alt="icon doctor">
+			</div>
+		</a>
+		<a href="specialist-appointments.html">
+			<div class="icon-box">
+				<img src="assets/appointment.svg" alt="icon doctor">
+			</div>
+		</a>
+	</div>
+	<div class="header">
+		<h1>Clínica Sansua - Saúde para si</h1>
+		<button class="btn btn--logout">Sair</button>
+
+	</div>
+	<div class="content">
+
+		<div class="marking content--decorated">
+			<ul class="making__menu">
+				<a onclick="openClose(event, 'NewPatient')" class="menu__item active tablinks">Nova Consulta</a>
+				<a onclick="openClose(event, 'ListPatients')" class="menu__item tablinks">Lista de Consultas</a>
+			</ul>
+
+			<div id="NewPatient" class="tabcontent form show">
+
+				<div class="form__item short-field">
+					<label for="date">Horário</label>
+					<input type="datetime-local" class="form__input" id="date" />
+				</div>
+
+				<div class="two-columns">
+					<div class="form__item">
+						<label for="clinicalSpeciality">Especialidade</label>
+						<select class="form__input" id="clinicalSpecialitySelect">
+							<option selected disabled>Escolhe a especialidade</option>
+						</select>
+					</div>
+
+					<div class="form__item">
+						<label for="Specialist">Especialista</label>
+						<select class="form__input" id="SpecialistSelect">
+							<option selected disabled>Escolhe o especialista</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="search__container">
+          <input type="search" placeholder="Nome do Paciente" id="searchPatient" class="search__input form__input" />
+        </div>
+				<div class="table-scroll">
+					<table>
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Gênero</th>
+								<th>Telefone</th>
+								<th>Idade</th>
+								<th>Acções</th>
+							</tr>
+						</thead>
+						<tbody class="patiente-list tbody-height">
+
+						</tbody>
+					</table>
+				</div>
+
+				<div class="btns-box">
+					<button id="sendAppointment" class="btn btn--primary">Salvar</button>
+					<button class="btn btn--secondary">Cancelar</button>
+				</div>
+			</div>
+
+			<div id="ListPatients" class="tabcontent">
+
+				
+
+				<div class="table-scroll">
+					<table>
+						<thead>
+							<tr>
+								<th>ESPECIALISTA</th>
+								<th>ESPECIALIDADE</th>
+								<th>PACIENTE</th>
+								<th>DATA</th>
+								<th>ESTADO</th>
+								<th>ACÇÕES</th>
+							</tr>
+						</thead>
+						<tbody class="appointment-list tbody-height">
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</body>
+<script src="moment.min.js"></script>
+<script src="./moment-locale-pt.js"></script>
+<script src="./sweetalert2.all.min.js"></script>
+<script src="./appointements.js" type="module"></script>
+<script src="./tabs.js"></script>
+
+</html>

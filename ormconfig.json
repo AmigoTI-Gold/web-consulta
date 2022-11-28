@@ -1,0 +1,13 @@
+{
+	"type": "postgres",
+	"host": "gold-database",
+	"port": 5432,
+	"username": "postgres",
+	"password": "postgres",
+	"database": "hospital",
+	"entities": ["./src/models/*.ts"],
+	"migrations": ["./src/database/migrations/*.ts"],
+	"cli": {
+		"migrationsDir": "src/database/migrations"
+	}
+}

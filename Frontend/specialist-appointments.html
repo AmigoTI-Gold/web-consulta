@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Clínica Sansua</title>
+</head>
+
+<body>
+  <div id="spinner-bg">
+    <div id="spinner"></div>
+  </div>
+
+  <div class="sidebar">
+		<a href="appointments.html">
+			<div class="icon-box">
+				<img src="assets/dashicons_calendar-alt.svg" alt="icon calender">
+			</div>
+		</a>
+    <a href="patient.html">
+      <div class="icon-box">
+        <img src="assets/icon-user.svg" alt="icon user">
+      </div>
+    </a>
+    <a href="Specialist.html">
+      <div class="icon-box">
+        <img src="assets/icon-doctor.svg" alt="icon doctor">
+			</div>
+
+		</a>
+		<a href="specialist-appointments.html">
+			<div class="icon-box">
+				<img src="assets/appointment.svg" alt="icon doctor">
+			</div>
+		</a></div>
+  <div class="header">
+		<h1>Clínica Sansua - Saúde para si</h1>
+		<button class="btn btn--logout">Sair</button>
+  </div>
+  <div class="content">
+    <div class="marking  content--decorated">
+			<h1>Minhas Consultas</h1>
+
+			<select id="filterAppointment" class="form__input">
+				<option value="">Todas</option>
+				<option value="Pendente">Pendentes</option>
+				<option value="Concluida">Concluídas</option>
+				<option value="Em progresso">Em Progresso</option>
+			</select>
+			<table>
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Idade</th>
+						<th>Estado</th>
+						<th>Data</th>
+						<th>Acções</th>
+					</tr>
+				</thead>
+				<tbody class="consultations-list">
+
+				</tbody>
+			</table>
+    </div>
+  </div>
+</body>
+<script src="./sweetalert2.all.min.js"></script>
+<script src="./moment.min.js"></script>
+<script src="./moment-locale-pt.js"></script>
+<script type="module" src="./specialist-appointments.js"></script>
+
+
+</html>
